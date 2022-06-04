@@ -1,4 +1,4 @@
-import user from "../user/user.json"
+import user from "../user.json"
 import Profile from "./Profile/Profile";
 
 export const App = () => {
