@@ -1,13 +1,15 @@
 import user from "../json/user.json";
 import data from "../json/data.json";
+import friends from "../json/friends.json";
 import Profile from "./Profile/Profile";
 import Statistics from "./Statistics/Statistics";
+import FriendList from "./FriendList/FriendList";
 
 export const App = () => {
   return (
     <div>
       <Profile
-        key={user.username}
+        
         username={user.username}
         tag={user.tag}
         location={user.location}
@@ -15,8 +17,10 @@ export const App = () => {
         stats={user.stats}
       /> 
       
-    <Statistics key={data.id} title="Upload stats" stats={data} />
-    <Statistics key={data.id} stats={data} />
+      <Statistics  title="Upload stats" stats={data} />
+      <Statistics stats={data} />
+      
+      <FriendList friends={friends} />
     </div>
   );
 
