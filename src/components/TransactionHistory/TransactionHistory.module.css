@@ -1,0 +1,12 @@
+.transactionHistory { 
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.item td { 
+    padding-bottom: 15px;
+}
+
+.container { 
+    text-align: center;
+}
