@@ -9,25 +9,33 @@ function Statistics( {title, stats} ) {
             )}
 
             <ul className={s.statList}>
-                <li className={s.item}>
-                <span className={s.label}>{stats[0].label}</span>
-                <span className={s.percentage}>4%</span>
-                </li>
-                <li className={s.item}>
-                <span className={s.label}>{stats[1].label}</span>
-                <span className={s.percentage}>14%</span>
-                </li>
-                <li className={s.item}>
-                <span className={s.label}>.pdf</span>
-                <span className={s.percentage}>41%</span>
-                </li>
-                <li className={s.item}>
-                <span className={s.label}>.mp4</span>
-                <span className={s.percentage}>12%</span>
-                </li>
+                {stats.map(elem => (
+                    <li key={elem.id}
+                        className={s.item}
+                        style={ {backgroundColor: '#' + randomColor()} }>
+                        <span className={s.label}>{elem.label}</span>
+                        <span className={s.percentage}>{elem.percentage}%</span>
+                    </li>
+                ))}
             </ul>
         </section>
     );
 };
 
+Statistics.prototype = {
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        percentage: PropTypes.number.isRequired
+    }))
+};
+
+function randomColor() {
+    return Math.floor(Math.random()*16777215).toString(16)
+};
+
+console.log(randomColor())
+
 export default Statistics;
+
