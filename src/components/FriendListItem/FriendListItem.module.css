@@ -1,0 +1,28 @@
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.status {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+}
+
+.active {
+    composes: status;
+    background-color: green;
+}
+
+.error {
+    composes: status;
+    background-color: red;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+.name {}
